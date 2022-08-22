@@ -1,0 +1,6 @@
+Financial Analysis 
+-------------------------------------
+Total number of months is: 86
+Net total amount of Profit & Losses over the entire period is: $22564198
+The greatest increase in Profits is: Aug-16 ($1862002)
+The greatest decrease in Profits is: Feb-14 ($-1825558)
