@@ -20,7 +20,8 @@ with open (pybank_csv) as pybank:
     csv_reader = csv.reader (pybank, delimiter= ",") 
 
     next(csv_reader) #to skip the first header row
-    previous_row = None
+    previous_row = str(row[2])
+
     #start the loop to read the file
     for row in csv_reader:
         #calculate the number of months within the dataset
