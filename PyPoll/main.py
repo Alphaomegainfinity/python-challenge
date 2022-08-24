@@ -80,3 +80,5 @@ with open (output_file, "w") as datafile:
         
         )
     datafile.write(data)
+ #closing the file after export the data.   
+datafile.close()

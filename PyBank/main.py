@@ -20,7 +20,7 @@ with open (pybank_csv) as pybank:
     csv_reader = csv.reader (pybank, delimiter= ",") 
 
     next(csv_reader) #to skip the first header row
-    previous_row = str(row[2])
+    previous_row = None
 
     #start the loop to read the file
     for row in csv_reader:
@@ -81,5 +81,5 @@ with open (pybank_csv) as pybank:
         f"The greatest decrease in Profits is: {min_month} (${min_decrease})\n"
         )
         datafile.write(data)
-
+    datafile.close()
    
