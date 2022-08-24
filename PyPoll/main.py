@@ -40,19 +40,14 @@ winner = max(candidate_votes, key=candidate_votes.get)
 # print outputs
 print("Election Results")
 print("------------------------")
-print("Total votes: {total_votes}".format(total_votes=total_number_vote))
+print("Total Votes: {total_votes}".format(total_votes=total_number_vote))
 print("------------------------")
 # loop through dictionary to print candidate results
 for key in candidate_votes.keys():
-    variable1 = key
-    variable2 = "%.3f%% (%d)"
-    variable3 = (candidate_votes[key]/total_number_vote*100)
-    variable4 = candidate_votes[key]
-   # ((key + ": %.3f%% (%d)") % ((candidate_votes[key]/total_number_vote*100), candidate_votes[key]))
+    print((key + ": %.3f%% (%d)") % ((candidate_votes[key]/total_number_vote*100), candidate_votes[key]))
     # %.3f so that percentage is 3 decimal places
     # %d to print integer (number of votes for each candidate)
-variable= (variable1, variable2 +"%", variable3, variable4)
-print (variable)
+
 print("------------------------")
 print("Winner: " + winner)
 print("------------------------")
@@ -69,7 +64,16 @@ with open (output_file, "w") as datafile:
         f"-------------------------------------\n"
         f"Total votes: {str(total_number_vote)}\n"
         f"-------------------------------------\n"
-        f"{str(variable)}\n"
+        )
+    datafile.write(data)
+    #create a special loop to print out all the candidate's names, % vote received and total number of vode received
+    for key in candidate_votes.keys():
+        data = ( f"{key} {round(candidate_votes[key]/total_number_vote*100,3)}% ({candidate_votes[key]})\n")
+
+        datafile.write(data)
+        
+    #continue to export output
+    data = (
         f"-------------------------------------\n"
         f"Winner: {winner}\n"
         f"-------------------------------------\n"
